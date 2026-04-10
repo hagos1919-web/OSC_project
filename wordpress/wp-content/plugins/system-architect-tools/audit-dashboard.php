@@ -70,3 +70,34 @@ function sa_render_audit_page() {
     </div>
     <?php
 }
+// ... your existing code ends at line 72 with }
+
+// 1. Change Login Logo
+function sa_custom_login_logo() { ?>
+    <style type="text/css">
+        #login h1 a, .login h1 a {
+            background-image: url(<?php echo plugins_url('logo.png', __FILE__); ?>);
+            height: 100px;
+            width: 320px;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    </style>
+<?php }
+add_action('login_enqueue_scripts', 'sa_custom_login_logo');
+
+// 2. Change Dashboard Admin Bar Logo
+function sa_custom_admin_bar_logo() {
+    echo '
+    <style type="text/css">
+        #wpadminbar #wp-admin-bar-wp-logo > .ab-item .ab-icon:before {
+            background-image: url(' . plugins_url('logo-small.png', __FILE__) . ') !important;
+            background-position: 0 0;
+            background-size: contain;
+            background-repeat: no-repeat;
+            color:rgba(0, 0, 0, 0);
+        }
+    </style>
+    ';
+}
+add_action('wp_before_admin_bar_render', 'sa_custom_admin_bar_logo');
