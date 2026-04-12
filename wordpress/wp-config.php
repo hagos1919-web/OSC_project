@@ -1,4 +1,6 @@
 <?php
+define('WP_HOME', 'http://localhost/OSC_project/wordpress');
+define('WP_SITEURL', 'http://localhost/OSC_project/wordpress');
 /**
  * The base configuration for WordPress
  *
