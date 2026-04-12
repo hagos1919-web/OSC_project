@@ -205,3 +205,23 @@ endif;
 
 add_action( 'init', 'twentytwentyfour_pattern_categories' );
 
+<<<<<<< HEAD
+=======
+function add_reading_time($content) {
+    $words_per_minute = 200; // Average reading speed
+    $word_count = str_word_count(strip_tags($content));
+    $minutes = ceil($word_count / $words_per_minute);
+
+    $reading_time = '<p style="font-style: italic;">Estimated reading time: ' . $minutes . ' min</p>';
+    return $reading_time . $content;
+}
+add_filter('the_content', 'add_reading_time');
+
+function display_group_info() {
+    return '<div style="border: 2px solid #000; padding: 10px; background: #e0f7fa;">
+                <strong>Project:</strong> Open Source Computing <br>
+                <strong>Status:</strong> Active Customization
+            </div>';
+}
+add_shortcode('group_info', 'display_group_info');
+>>>>>>> origin/feature/aderajew_customization
