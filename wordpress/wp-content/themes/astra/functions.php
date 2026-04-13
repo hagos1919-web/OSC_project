@@ -207,3 +207,36 @@ require_once ASTRA_THEME_DIR . 'inc/abilities/bootstrap.php';
 require_once ASTRA_THEME_DIR . 'inc/core/deprecated/deprecated-filters.php';
 require_once ASTRA_THEME_DIR . 'inc/core/deprecated/deprecated-hooks.php';
 require_once ASTRA_THEME_DIR . 'inc/core/deprecated/deprecated-functions.php';
+
+/**
+ * START OF ADARAJEWG'S CUSTOMIZATIONS
+ */
+
+// 1. Feature: Estimated Reading Time
+function adarajew_reading_time($content) {
+    $wpm = 200; // Words per minute
+    $word_count = str_word_count(strip_tags($content));
+    $minutes = ceil($word_count / $wpm);
+    $time_display = '<div style="background:#f9f9f9; padding:5px 10px; border-left:4px solid #2271b1; margin-bottom:20px;">
+                        ⏱️ Estimated reading time: ' . $minutes . ' min
+                    </div>';
+    return $time_display . $content;
+}
+add_filter('the_content', 'adarajew_reading_time');
+
+// 2. Feature: Custom Admin Welcome Message (Visible in Dashboard)
+function adarajew_custom_dashboard_welcome() {
+    echo '<div style="background:#fff; border: 2px solid #2271b1; padding:20px; margin-top:20px; border-radius:8px;">
+            <h2 style="color:#2271b1; margin-top:0;">Project Status: Fully Customized</h2>
+            <p>This WordPress environment has been updated with custom PHP logic by <strong>adarajewg</strong>.</p>
+            <ul>
+                <li>✅ Automated Reading Time Logic</li>
+                <li>✅ Custom CSS Styling for Headlines</li>
+            </ul>
+          </div>';
+}
+add_action('welcome_panel', 'adarajew_custom_dashboard_welcome');
+
+/**
+ * END OF CUSTOMIZATIONS
+ */

@@ -13,3 +13,18 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: twentytwentyfour
 Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready, wide-blocks, block-styles, style-variations, accessibility-ready, blog, portfolio, news
 */
+
+/* Custom styling for post titles */
+.wp-block-post-title {
+    color: #2271b1 !important; /* Professional Blue */
+    border-bottom: 2px solid #eeeeee;
+    padding-bottom: 10px;
+    letter-spacing: -0.5px;
+}
+
+/* Style the Reading Time box we created above */
+.reading-time {
+    font-size: 0.9em;
+    color: #555;
+    font-style: italic;
+}

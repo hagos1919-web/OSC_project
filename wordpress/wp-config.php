@@ -1,4 +1,6 @@
 <?php
+define('WP_HOME', 'http://localhost/OSC_project/wordpress');
+define('WP_SITEURL', 'http://localhost/OSC_project/wordpress');
 /**
  * The base configuration for WordPress
  */
@@ -45,8 +47,7 @@ define( 'WP_DEBUG', false );
 /** * These lines force the site to load correctly on his Windows machine 
  * even if he names the folder 'OSC_project' instead of 'wordpress'
  */
-define('WP_HOME', 'http://localhost/OSC_project/wordpress');
-define('WP_SITEURL', 'http://localhost/OSC_project/wordpress');
+
 
 /* --- END OF EDITS --- */
 
