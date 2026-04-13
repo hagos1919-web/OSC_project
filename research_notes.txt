@@ -1,5 +1,4 @@
-[WEB SECURITY RESEARCH]
-- Platform: WordPress (CMS)
-- Focus: Plugin vulnerability analysis and SQL injection prevention.
-- Tools: WPScan, Burp Suite (on Kali Linux).
-- Goal: Secure deployment of local database environments.    
+[ADVANCED WORDPRESS RESEARCH]
+- Data Science: Utilizing WordPress REST API for automated dataset collection.
+- Architecture: Exploring 'Headless' deployments to minimize attack surface.
+- Performance: Leveraging Nginx as a reverse proxy for security hardening.
